@@ -1001,7 +1001,9 @@ hubbub_error element_stack_push(hubbub_treebuilder *treebuilder,
 
 	treebuilder->context.element_stack[slot].ns = ns;
 	treebuilder->context.element_stack[slot].type = type;
+	treebuilder->context.element_stack[slot].name = NULL;
 	treebuilder->context.element_stack[slot].node = node;
+	treebuilder->context.element_stack[slot].tainted = false;
 
 	treebuilder->context.current_node = slot;
 
@@ -1148,6 +1150,7 @@ uint32_t current_table(hubbub_treebuilder *treebuilder)
 	element_context *stack = treebuilder->context.element_stack;
 	size_t t;
 
+	assert((signed) treebuilder->context.current_node >= 0);
 	for (t = treebuilder->context.current_node; t != 0; t--) {
 		if (stack[t].type == TABLE)
 			return t;
