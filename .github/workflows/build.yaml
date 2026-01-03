@@ -37,6 +37,7 @@ jobs:
                flex
                git
                gperf
+               libjson-c-dev
                llvm
                pkg-config
 
