@@ -110,6 +110,7 @@ s,                   S
 script,              SCRIPT
 select,              SELECT
 small,               SMALL
+source,              SOURCE
 spacer,              SPACER
 strike,              STRIKE
 strong,              STRONG
@@ -125,6 +126,7 @@ th,                  TH
 thead,               THEAD
 title,               TITLE
 tr,                  TR
+track,               TRACK
 tt,                  TT
 u,                   U
 ul,                  UL
