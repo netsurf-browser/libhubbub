@@ -322,10 +322,11 @@ hubbub_error process_start_tag(hubbub_treebuilder *treebuilder,
 				current_table(treebuilder)].tainted = false;
 			treebuilder->context.mode = IN_TABLE;
 		}
-	} else if (type == AREA || type == BASEFONT || 
-			type == BGSOUND || type == BR || 
+	} else if (type == AREA || type == BASEFONT ||
+			type == BGSOUND || type == BR ||
 			type == EMBED || type == IMG || type == INPUT ||
-			type == PARAM || type == SPACER || type == WBR) {
+			type == PARAM || type == SOURCE || type == SPACER ||
+			type == TRACK || type == WBR) {
 		err = reconstruct_active_formatting_list(treebuilder);
 		if (err != HUBBUB_OK)
 			return err;
